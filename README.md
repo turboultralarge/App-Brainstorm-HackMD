@@ -35,7 +35,7 @@ Possible areas of interest: education, productivity, lifestyle, entertainment
 
 
 ## Wireframes
-<img src="https://imgur.com/rH7Prfx" width=800><br>
+<img src="/IMG_1755.jpeg" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="" height=200>
