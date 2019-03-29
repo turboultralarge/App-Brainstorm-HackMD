@@ -34,3 +34,49 @@ Possible areas of interest: education, productivity, lifestyle, entertainment
     - Using Google Map's API and ARKit
 
 
+## Wireframes
+<img src="https://imgur.com/rH7Prfx" width=800><br>
+
+### [BONUS] Digital Wireframes & Mockups
+<img src="" height=200>
+
+### [BONUS] Interactive Prototype
+<img src="" width=200>
+
+## Schema 
+### Models
+#### Post
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | UserID        | String   | unique id for the user |
+   | ParentImageID | int      | references a KeyImageID connected to userID |
+   | ChildImageID  | int      | photos attached to KeyImageID |
+   
+### Networking
+#### List of network requests by screen
+   - Home Feed Screen
+      - (Read/GET) Query all posts where user is author
+         ```swift
+         let query = PFQuery(className:"Post")
+         query.whereKey("author", equalTo: currentUser)
+         query.order(byDescending: "createdAt")
+         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+            if let error = error { 
+               print(error.localizedDescription)
+            } else if let posts = posts {
+               print("Successfully retrieved \(posts.count) posts.")
+           // TODO: Do something with posts...
+            }
+         }
+         ```
+      - (Create/POST) Create a new like on a post
+      - (Delete) Delete existing like
+      - (Create/POST) Create a new comment on a post
+      - (Delete) Delete existing comment
+   - Create Post Screen
+      - (Create/POST) Create a new post object
+   - Profile Screen
+      - (Read/GET) Query logged in user object
+      - (Update/PUT) Update user profile image
+      
