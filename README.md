@@ -52,6 +52,7 @@ Possible areas of interest: education, productivity, lifestyle, entertainment
    | UserID        | String   | unique id for the user |
    | ParentImageID | int      | references a KeyImageID connected to userID |
    | ChildImageID  | int      | photos attached to KeyImageID |
+   | CollectionTitle|String   | Title for a collection of images |
    
 ### Networking
 #### List of network requests by screen
